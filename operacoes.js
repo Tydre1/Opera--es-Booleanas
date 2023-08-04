@@ -65,8 +65,16 @@ if(nataliaAventureira.nivelDaArmadura1 >= andreAventureiro.nivelDaArmadura) {
     console.log(`${nataliaAventureira.nome1} você vai ser amassada e mandada para o "beleleu" pela ${andreAventureiro.poder} do ${andreAventureiro.nome}... Corra!`);
 }
 
-if(nataliaAventureira > andreAventureiro) {
-    console.log(`${nataliaAventureira.nome1} você consegue derrotar o ${andreAventureiro.nome}, acabe com ele usando seu ${nataliaAventureira.poder1}!`);
+const probabilidadeVitoriaNatalia = 0.5;
+const probabilidadeVitoriaAndre = 1 - probabilidadeVitoriaNatalia;
+
+const randomNatalia = Math.random();
+const randomAndre = Math.random();
+
+if(randomNatalia < probabilidadeVitoriaNatalia) {
+    console.log(`${nataliaAventureira.nome1}, você consegue derrotar o ${andreAventureiro.nome}, acabe com ele usando seu ${nataliaAventureira.poder1}!`);
+} else if (randomAndre < probabilidadeVitoriaAndre) {
+    console.log(`${nataliaAventureira.nome1}, você vai ser amassada e mandada para o "beleleu" pela ${andreAventureiro.poder} do ${andreAventureiro.nome}... Corra!`);
 } else {
-    console.log(`${nataliaAventureira.nome1} você vai ser amassada e mandada para o "beleleu" pela ${andreAventureiro.poder} do ${andreAventureiro.nome}... Corra!`);
+    console.log("Vocês são dois pébas, tentem novamente (empate)");
 }
